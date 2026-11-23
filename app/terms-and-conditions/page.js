@@ -27,7 +27,7 @@ export default function TermsAndConditions() {
                         transition={{ duration: 0.6 }}
                     >
                         <h1 className="text-4xl md:text-6xl font-bold mb-6">Terms & Conditions</h1>
-                        <p className="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto">
+                        <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto">
                             Please read these terms carefully before using our services.
                         </p>
                     </motion.div>
@@ -46,7 +46,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Scale className="w-6 h-6 text-blue-600" />
+                                    <Scale className="w-6 h-6 text-purple-600" />
                                     1. Acceptance of Terms
                                 </h2>
                                 <p>
@@ -56,7 +56,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Users className="w-6 h-6 text-blue-600" />
+                                    <Users className="w-6 h-6 text-purple-600" />
                                     2. Use of Services
                                 </h2>
                                 <p>
@@ -71,7 +71,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Copyright className="w-6 h-6 text-blue-600" />
+                                    <Copyright className="w-6 h-6 text-purple-600" />
                                     3. Intellectual Property
                                 </h2>
                                 <p>
@@ -84,7 +84,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <CreditCard className="w-6 h-6 text-blue-600" />
+                                    <CreditCard className="w-6 h-6 text-purple-600" />
                                     4. Payment and Refunds
                                 </h2>
                                 <p>
@@ -99,7 +99,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <TriangleAlert className="w-6 h-6 text-blue-600" />
+                                    <TriangleAlert className="w-6 h-6 text-purple-600" />
                                     5. Limitation of Liability
                                 </h2>
                                 <p>
@@ -109,7 +109,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Users className="w-6 h-6 text-blue-600" />
+                                    <Users className="w-6 h-6 text-purple-600" />
                                     6. SaaS Platform Responsibilities (DHEENEX ONE)
                                 </h2>
                                 <p>
@@ -119,16 +119,16 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <CircleHelp className="w-6 h-6 text-blue-600" />
+                                    <CircleHelp className="w-6 h-6 text-purple-600" />
                                     7. Contact Information
                                 </h2>
                                 <p>
                                     Any questions about these Terms & Conditions should be addressed to us at:
                                 </p>
-                                <div className="mt-4 p-6 bg-blue-50 rounded-xl border border-blue-100">
-                                    <p className="font-bold text-lg text-blue-900">DHEENEX TECHNOLOGIES</p>
-                                    <p className="text-blue-800">Email: contact@dheenex.com</p>
-                                    <p className="text-blue-800">Address: 1/291, Anna Nagar, Ogalur, Perambalur Dist, Kunnam Tk, PIN 621108</p>
+                                <div className="mt-4 p-6 bg-purple-50 rounded-xl border border-purple-100">
+                                    <p className="font-bold text-lg text-purple-900">DHEENEX TECHNOLOGIES</p>
+                                    <p className="text-purple-800">Email: contact@dheenex.com</p>
+                                    <p className="text-purple-800">Address: 1/291, Anna Nagar, Ogalur, Perambalur Dist, Kunnam Tk, PIN 621108</p>
                                 </div>
                             </div>
 

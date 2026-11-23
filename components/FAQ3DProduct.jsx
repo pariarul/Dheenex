@@ -30,8 +30,8 @@ function GameController() {
 
         // Gradient background
         const grd = ctx.createLinearGradient(0, 0, 512, 256);
-        grd.addColorStop(0, "#1e4ba8");
-        grd.addColorStop(1, "#3b6fd8");
+        grd.addColorStop(0, "#4f46e5");
+        grd.addColorStop(1, "#9333ea");
         ctx.fillStyle = grd;
         ctx.fillRect(0, 0, 512, 256);
 
@@ -58,7 +58,7 @@ function GameController() {
             {/* Controller body */}
             <mesh>
                 <boxGeometry args={[3, 1, 1]} />
-                <meshStandardMaterial color="#002772" metalness={0.7} roughness={0.3} />
+                <meshStandardMaterial color="#0f766e" metalness={0.7} roughness={0.3} />
             </mesh>
 
             {/* Surface panel */}
@@ -67,18 +67,18 @@ function GameController() {
                 {surfaceTexture ? (
                     <meshBasicMaterial map={surfaceTexture} />
                 ) : (
-                    <meshStandardMaterial color="#3b6fd8" />
+                    <meshStandardMaterial color="#06b6d4" />
                 )}
             </mesh>
 
             {/* Analog sticks */}
             <mesh position={[-0.7, -0.2, 0.51]}>
                 <cylinderGeometry args={[0.15, 0.15, 0.1, 32]} />
-                <meshStandardMaterial color="#1e4ba8" />
+                <meshStandardMaterial color="#4f46e5" />
             </mesh>
             <mesh position={[0.7, -0.2, 0.51]}>
                 <cylinderGeometry args={[0.15, 0.15, 0.1, 32]} />
-                <meshStandardMaterial color="#3b6fd8" />
+                <meshStandardMaterial color="#9333ea" />
             </mesh>
         </group>
     )
@@ -90,9 +90,9 @@ export default function FAQ3DProduct() {
             <Canvas camera={{ position: [0, 0, 8], fov: 50 }} dpr={[1, 2]}>
                 {/* Lighting */}
                 <ambientLight intensity={1.2} />
-                <directionalLight position={[10, 10, 5]} intensity={1.8} color="#1e4ba8" />
-                <directionalLight position={[-10, 10, -5]} intensity={1} color="#3b6fd8" />
-                <spotLight position={[0, 10, 0]} intensity={0.8} angle={0.5} penumbra={1} color="#002772" />
+                <directionalLight position={[10, 10, 5]} intensity={1.8} color="#4f46e5" />
+                <directionalLight position={[-10, 10, -5]} intensity={1} color="#9333ea" />
+                <spotLight position={[0, 10, 0]} intensity={0.8} angle={0.5} penumbra={1} color="#0f766e" />
 
                 {/* Floating Controller */}
                 <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>

@@ -34,8 +34,8 @@ function LaptopModel() {
     const ctx = canvas.getContext("2d")
 
     const g = ctx.createLinearGradient(0, 0, 512, 512)
-    g.addColorStop(0, "#1e4ba8")
-    g.addColorStop(1, "#3b6fd8")
+    g.addColorStop(0, "#4f46e5")
+    g.addColorStop(1, "#9333ea")
     ctx.fillStyle = g
     ctx.fillRect(0, 0, 512, 340)
 
@@ -119,7 +119,7 @@ export default function Hero3DProduct() {
         <directionalLight
           position={[-8, 6, -5]}
           intensity={1}
-          color="#1e4ba8"
+          color="#4f46e5"
         />
 
         <Float speed={1.3} floatIntensity={0.22} rotationIntensity={0.25}>

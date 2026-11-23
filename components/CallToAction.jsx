@@ -41,8 +41,8 @@ function MonitorWithMouse() {
     const ctx = canvas.getContext("2d");
 
     const grd = ctx.createLinearGradient(0, 0, 1024, 600);
-    grd.addColorStop(0, "#1e4ba8");
-    grd.addColorStop(1, "#3b6fd8");
+    grd.addColorStop(0, "#4f46e5");
+    grd.addColorStop(1, "#9333ea");
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, 1024, 600);
 
@@ -67,7 +67,7 @@ function MonitorWithMouse() {
         {screenTexture ? (
           <meshBasicMaterial map={screenTexture} />
         ) : (
-          <meshStandardMaterial color="#1e4ba8" />
+          <meshStandardMaterial color="#4f46e5" />
         )}
       </mesh>
 
@@ -103,7 +103,7 @@ export default function CallToAction() {
           <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
             <ambientLight intensity={1.2} />
             <directionalLight position={[10, 10, 5]} intensity={2} />
-            <directionalLight position={[-10, 10, -5]} intensity={1} color="#3b6fd8" />
+            <directionalLight position={[-10, 10, -5]} intensity={1} color="#9333ea" />
 
             <Float speed={2} rotationIntensity={0.4} floatIntensity={0.4}>
               <MonitorWithMouse />

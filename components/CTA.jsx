@@ -19,7 +19,7 @@ export default function CTA() {
         
         <a
           href="tel:+919361430865"
-          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white text-[#1e4ba8] font-bold hover:bg-gray-100 transition text-center"
+          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white text-[#4f46e5] font-bold hover:bg-gray-100 transition text-center"
         >
           📞 Call Now
         </a>

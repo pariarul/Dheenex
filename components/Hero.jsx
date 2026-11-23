@@ -11,9 +11,9 @@ const Hero3DProduct = dynamic(() => import("@/components/Hero3DProduct"), { ssr:
 
 const stats = [];
 
-const BLUE = "#002772ff";
-const ACCENT = "#3b6fd8ff";
-const YELLOW = "#3b6fd8";
+const BLUE = "#0a3d9aff";
+const ACCENT = "#2b6dd7ff";
+const YELLOW = "#f59e0b";
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,7 +54,7 @@ export default function Hero() {
               <span className="absolute inset-0 rounded-xl animate-spin-slow" style={{ border: `2px dashed ${YELLOW}` }} />
               <Award className="relative z-10 w-5 h-5 sm:w-6 sm:h-6" style={{ color: YELLOW }} />
             </div>
-            <div className="relative px-4 py-1 sm:px-5 sm:py-2 rounded-xl shadow-md bg-blue-500 text-blue-900">
+            <div className="relative px-4 py-1 sm:px-5 sm:py-2 rounded-xl shadow-md bg-yellow-500 text-blue-900">
               <p className="text-xs sm:text-sm font-bold leading-tight">Top-Rated Tech Agency</p>
             </div>
           </div>
@@ -106,8 +106,8 @@ export default function Hero() {
             className="absolute top-0 sm:top-10 right-0 sm:right-10 bg-white/80 backdrop-blur-md p-2 sm:p-4 rounded-2xl shadow-lg border border-white/50 hidden md:flex"
           >
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="p-1 sm:p-2 bg-blue-100 rounded-lg">
-                <Star className="w-4 h-4 sm:w-5 sm:h-6 text-blue-600" fill="currentColor" />
+              <div className="p-1 sm:p-2 bg-yellow-100 rounded-lg">
+                <Star className="w-4 h-4 sm:w-5 sm:h-6 text-yellow-600" fill="currentColor" />
               </div>
               <div>
                 <p className="text-[8px] sm:text-xs text-gray-500 font-semibold uppercase">Review</p>

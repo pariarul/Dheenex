@@ -20,7 +20,7 @@ import {
   PhoneCall,
 } from "lucide-react";
 
-const BLUE = "#002772ff";
+const BLUE = "#0a3d9aff";
 
 const socialLinks = [
   {
