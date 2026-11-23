@@ -48,17 +48,17 @@ function MobileModel() {
 
     // Gradient background
     const grd = ctx.createLinearGradient(0, 0, 512, 1024);
-    grd.addColorStop(0, "#4f46e5");
-    grd.addColorStop(1, "#9333ea");
+    grd.addColorStop(0, "#1e4ba8");
+    grd.addColorStop(1, "#3b6fd8");
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, 512, 1024);
 
     // Text
     ctx.fillStyle = "white";
     ctx.font = "bold 50px Arial";
-    ctx.fillText("COBENO", 50, 100);
+    ctx.fillText("DHEENEX", 50, 100);
     ctx.font = "25px Arial";
-    ctx.fillText("Infotech Solutions", 50, 150);
+    ctx.fillText("Technologies", 50, 150);
 
     // Code lines
     ctx.fillStyle = "rgba(255,255,255,0.2)";
@@ -83,7 +83,7 @@ function MobileModel() {
         {screenTexture ? (
           <meshBasicMaterial map={screenTexture} />
         ) : (
-          <meshStandardMaterial color="#4f46e5" />
+          <meshStandardMaterial color="#1e4ba8" />
         )}
       </mesh>
     </group>
@@ -101,7 +101,7 @@ export default function About3DProduct() {
         {/* Lighting */}
         <ambientLight intensity={1.5} />
         <directionalLight position={[10, 10, 5]} intensity={2} />
-        <directionalLight position={[-10, 10, -5]} intensity={1} color="#4f46e5" />
+        <directionalLight position={[-10, 10, -5]} intensity={1} color="#1e4ba8" />
         <spotLight position={[0, 10, 0]} intensity={1} angle={0.5} penumbra={1} />
 
         {/* Floating Mobile */}

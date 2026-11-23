@@ -37,16 +37,16 @@ function MonitorWithMouse() {
     const ctx = canvas.getContext("2d");
 
     const grd = ctx.createLinearGradient(0, 0, 1024, 600);
-    grd.addColorStop(0, "#4f46e5");
-    grd.addColorStop(1, "#9333ea");
+    grd.addColorStop(0, "#1e4ba8");
+    grd.addColorStop(1, "#3b6fd8");
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, 1024, 600);
 
     ctx.fillStyle = "white";
     ctx.font = "bold 64px Arial";
-    ctx.fillText("COBENO", 60, 120);
+    ctx.fillText("DHEENEX", 60, 120);
     ctx.font = "30px Arial";
-    ctx.fillText("Infotech Solutions", 60, 170);
+    ctx.fillText("Technologies", 60, 170);
 
     return new THREE.CanvasTexture(canvas);
   }, []);
@@ -70,7 +70,7 @@ function MonitorWithMouse() {
         {screenTexture ? (
           <meshBasicMaterial map={screenTexture} />
         ) : (
-          <meshStandardMaterial color="#4f46e5" />
+          <meshStandardMaterial color="#1e4ba8" />
         )}
       </mesh>
 

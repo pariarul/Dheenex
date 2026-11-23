@@ -1,14 +1,18 @@
+import { Lexend } from "next/font/google";
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
 import WhatsAppChat from "@/components/WhatsAppChat";
 
+// Same font as the DheeneX One admin app (variable font: every weight 100-900)
+const lexend = Lexend({ variable: "--font-lexend", subsets: ["latin"], display: "swap" });
+
 export const metadata = {
-  title: "Cobenoinfotech | Leading Web & Mobile App Development Agency in India",
+  title: "DHEENEX TECHNOLOGIES | Leading Web & Mobile App Development Agency in India",
   description:
-    "Cobenoinfotech provides premium web development, mobile app solutions, and custom software engineering. Specializing in SaaS, E-commerce, and Fintech apps in Perambalur, Coimbatore, and across India.",
+    "DHEENEX TECHNOLOGIES provides premium web development, mobile app solutions, and custom software engineering. Specializing in SaaS, E-commerce, and Fintech apps in Perambalur, Coimbatore, and across India.",
 
   keywords: [
-    "Cobenoinfotech",
+    "DHEENEX TECHNOLOGIES",
     "Web Development India",
     "Mobile App Development Perambalur",
     "Custom Software Development",
@@ -42,23 +46,21 @@ export const metadata = {
     "Web Portals Development"
   ],
 
-  icons: {
-    icon: "/cobeno_logo.png",
-  },
+  // Favicon: app/icon.png and app/apple-icon.png (DheeneX Technology "D" icon); /dheenex-one has its own
 
   /* 🔹 Open Graph (Facebook, Instagram, LinkedIn) */
   openGraph: {
-    title: "Cobenoinfotech | High-Performance Web & Mobile Solutions",
+    title: "DHEENEX TECHNOLOGIES | High-Performance Web & Mobile Solutions",
     description:
-      "Transform your business with Cobenoinfotech's professional web and mobile development services. Specializing in scalable digital products.",
-    url: "https://www.cobenoinfotech.com",
-    siteName: "Cobenoinfotech",
+      "Transform your business with DHEENEX TECHNOLOGIES's professional web and mobile development services. Specializing in scalable digital products.",
+    url: "https://www.DHEENEX TECHNOLOGIES.com",
+    siteName: "DHEENEX TECHNOLOGIES",
     images: [
       {
-        url: "/cobeno_logo.png",
+        url: "/dheenex-technology-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Cobenoinfotech - Premium Web & App Development",
+        alt: "DHEENEX TECHNOLOGIES - Premium Web & App Development",
       },
     ],
     locale: "en_IN",
@@ -68,10 +70,10 @@ export const metadata = {
   /* 🔹 Twitter Support */
   twitter: {
     card: "summary_large_image",
-    title: "Cobenoinfotech | Expert Software Development Agency",
+    title: "DHEENEX TECHNOLOGIES | Expert Software Development Agency",
     description:
       "Building the next generation of web and mobile applications for global businesses.",
-    images: ["/cobeno_logo.png"],
+    images: ["/dheenex-technology-og.jpg"],
   },
   
   /* 🔹 Robots & Search Indexing */
@@ -90,7 +92,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={lexend.variable}>
       <body className="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300 relative">
         {children}
         <BottomNav />

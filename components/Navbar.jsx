@@ -14,6 +14,7 @@ import {
   Briefcase,
   PhoneCall,
   Settings2,
+   ChevronRight,
   Laptop,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,29 +48,44 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR */}
+      {/* NAVBAR CONTAINER */}
       <nav
         className={clsx(
-          "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+          "fixed top-0 inset-x-0 z-50 transition-all duration-300 flex flex-col",
           scrolled || isOpen
             ? "bg-white/90 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         )}
       >
- <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        {/* TOP ANNOUNCEMENT BAR */}
+        <div className="w-full bg-gradient-to-r from-blue-900 via-blue-900 to-slate-900 text-white text-xs py-2 px-4 text-center font-medium border-b border-blue-500/20">
+          <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-500 text-white uppercase tracking-wider">
+              New Launch
+            </span>
+            <span>
+              Introducing <strong>Dheenex One</strong> — Workforce • Internship • Learning • Projects in a unified SaaS platform.
+            </span>
+            <a
+              href="/dheenex-one"
+              className="underline hover:text-blue-300 font-semibold inline-flex items-center gap-1 ml-1"
+            >
+              Explore Platform <ChevronRight size={12} />
+            </a>
+          </div>
+        </div>
+
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <img
-              src="/Cobeno_Infotech_logo.png"
-              alt="Cobenoinfotech"
-              className="h-40 w-[400px] max-w-full object-contain"
-            />
+            <img src="/dheenex-technology-logo.png" alt="DheeneX Technologies" className="h-9 sm:h-11 w-auto max-w-[220px] object-contain dark:hidden" />
+            <img src="/dheenex-technology-logo-white.png" alt="DheeneX Technologies" className="hidden h-9 sm:h-11 w-auto max-w-[220px] object-contain dark:block" />
           </Link>
 
           {/* RIGHT ACTIONS */}
           <div className="flex items-center gap-3">
-            <button className="hidden sm:flex p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10">
+            <button suppressHydrationWarning className="hidden sm:flex p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10">
               <Search size={20} />
             </button>
 
@@ -110,11 +126,7 @@ export default function Navbar() {
         
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <img
-              src="/Cobeno_Infotech_logo.png"
-              alt="Cobenoinfotech"
-              className="h-40 w-[400px] max-w-full object-contain"
-            />
+            <img src="/dheenex-technology-logo.png" alt="DheeneX Technologies" className="h-9 sm:h-11 w-auto max-w-[220px] object-contain" />
           </Link>
 
           {/* RIGHT ACTIONS */}
@@ -190,11 +202,11 @@ export default function Navbar() {
                 </span>
 
                 <a
-                  href="mailto:cobenoinfotech@gmail.com"
+                  href="mailto:contact@dheenex.com"
                   className="flex items-center gap-3 mb-3 text-lg font-semibold hover:text-blue-700"
                 >
                   <Mail className="text-blue-600" />
-                  cobenoinfotech@gmail.com
+                  contact@dheenex.com
                 </a>
 
                 <a

@@ -31,10 +31,10 @@ export default function WhatsAppChat() {
             <div className="bg-[#25D366] p-4 flex items-center justify-between text-white">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                  <img src="/Cobeno_Infotech_logo.png" alt="Cobeno" className="w-8 h-8 object-contain brightness-0 invert" />
+                  <img src="/dheenex-technology-icon-white.png" alt="DheeneX Technologies" className="w-7 h-7 object-contain" />
                 </div>
                 <div>
-                  <p className="font-bold text-sm">Cobenoinfotech</p>
+                  <p className="font-bold text-sm">DHEENEX TECHNOLOGIES</p>
                   <p className="text-[10px] opacity-90">Typically replies in minutes</p>
                 </div>
               </div>

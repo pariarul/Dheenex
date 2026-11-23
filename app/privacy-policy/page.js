@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
                                     1. Introduction
                                 </h2>
                                 <p>
-                                    Welcome to <strong>Cobenoinfotech</strong> ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
+                                    Welcome to <strong>DHEENEX TECHNOLOGIES</strong> ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
                                 </p>
                             </div>
 
@@ -60,13 +60,14 @@ export default function PrivacyPolicy() {
                                     2. Information We Collect
                                 </h2>
                                 <p>
-                                    We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows:
+                                    We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows, including data specifically managed through our <strong>DHEENEX ONE</strong> SaaS platform:
                                 </p>
                                 <ul className="list-disc pl-6 space-y-2 mt-4">
                                     <li><strong>Identity Data:</strong> includes first name, last name, username or similar identifier.</li>
                                     <li><strong>Contact Data:</strong> includes email address and telephone numbers.</li>
                                     <li><strong>Technical Data:</strong> includes internet protocol (IP) address, browser type and version, time zone setting and location, and operating system.</li>
                                     <li><strong>Usage Data:</strong> includes information about how you use our website, products, and services.</li>
+                                    <li><strong>SaaS Platform Data (DHEENEX ONE):</strong> Includes employee records, intern tracking data, learning progress, assessment scores, and third-party developer activity metrics (e.g., GitHub/GitLab commits) synchronized through the platform. This data is strictly isolated per tenant organization.</li>
                                 </ul>
                             </div>
 
@@ -91,7 +92,7 @@ export default function PrivacyPolicy() {
                                     4. Data Security
                                 </h2>
                                 <p>
-                                    We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.
+                                    We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. For our <strong>DHEENEX ONE</strong> SaaS platform, we employ strict Tenant Data Isolation, Role-Based Access Control (RBAC), and isolated Docker sandboxes for secure code execution. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know.
                                 </p>
                             </div>
 
@@ -114,8 +115,8 @@ export default function PrivacyPolicy() {
                                     If you have any questions about this privacy policy or our privacy practices, please contact us at:
                                 </p>
                                 <div className="mt-4 p-6 bg-blue-50 rounded-xl border border-blue-100">
-                                    <p className="font-bold text-lg text-blue-900">Cobenoinfotech</p>
-                                    <p className="text-blue-800">Email: cobenoinfotech@gmail.com</p>
+                                    <p className="font-bold text-lg text-blue-900">DHEENEX TECHNOLOGIES</p>
+                                    <p className="text-blue-800">Email: contact@dheenex.com</p>
                                     <p className="text-blue-800">Address: 1/291, Anna Nagar, Ogalur, Perambalur Dist, Kunnam Tk, PIN 621108</p>
                                 </div>
                             </div>

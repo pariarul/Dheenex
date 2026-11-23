@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 import { ArrowRight, Trophy, Users, Award, Star } from "lucide-react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
+import { useState } from "react";
+import EnquiryModal from "@/components/EnquiryModal";
 // Disable SSR for Three.js
 const Hero3DProduct = dynamic(() => import("@/components/Hero3DProduct"), { ssr: false });
 
-const stats = [
-  { label: "Projects Done", value: "25+", icon: Trophy },
-  { label: "Expert Team", value: "5+", icon: Award },
-];
+const stats = [];
 
-const BLUE = "#0a3d9aff";
-const ACCENT = "#2b6dd7ff";
-const YELLOW = "#f59e0b";
+const BLUE = "#002772ff";
+const ACCENT = "#3b6fd8ff";
+const YELLOW = "#3b6fd8";
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative flex flex-col lg:flex-row items-center pt-24 pb-12 lg:pb-24 overflow-hidden bg-white min-h-screen">
 
@@ -54,7 +54,7 @@ export default function Hero() {
               <span className="absolute inset-0 rounded-xl animate-spin-slow" style={{ border: `2px dashed ${YELLOW}` }} />
               <Award className="relative z-10 w-5 h-5 sm:w-6 sm:h-6" style={{ color: YELLOW }} />
             </div>
-            <div className="relative px-4 py-1 sm:px-5 sm:py-2 rounded-xl shadow-md bg-yellow-500 text-blue-900">
+            <div className="relative px-4 py-1 sm:px-5 sm:py-2 rounded-xl shadow-md bg-blue-500 text-blue-900">
               <p className="text-xs sm:text-sm font-bold leading-tight">Top-Rated Tech Agency</p>
             </div>
           </div>
@@ -71,40 +71,23 @@ export default function Hero() {
 
           {/* DESCRIPTION */}
           <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 max-w-xs sm:max-w-md mx-auto lg:mx-0 leading-relaxed">
-            Cobenoinfotech specializes in modern <span className="font-semibold text-blue-900">web development and mobile app solutions.</span>
+            DHEENEX TECHNOLOGIES specializes in modern <span className="font-semibold text-blue-900">web development and mobile app solutions.</span>
             We help companies grow by building innovative digital products across all platforms.
           </p>
 
           {/* BUTTONS */}
           <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <a
-              href="tel:+919361430865"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="group relative inline-flex items-center bg-blue-800 justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               
             >
               Get a Quote <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
           </div>
 
-          {/* TRUST METRICS (scrollable on mobile) */}
-          <div className="mt-6 sm:mt-10 pt-4 sm:pt-6 border-t border-gray-100 overflow-x-auto">
-            <div className="flex sm:grid sm:grid-cols-3 gap-6 sm:gap-8 min-w-max sm:min-w-0">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  className="flex flex-col items-center sm:items-start min-w-[100px]"
-                >
-                  <div className="flex items-center gap-2 text-xl sm:text-2xl font-bold text-gray-900">
-                    {stat.value} <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
-                  </div>
-                  <p className="text-[10px] sm:text-xs font-medium text-gray-500 mt-1">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          {/* Modal removed from here to avoid z-10 stacking context trap */}
+
         </motion.div>
 
         {/* RIGHT CONTENT (3D MOBILE) */}
@@ -112,7 +95,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center mt-8 lg:mt-0"
+          className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center mt-12 lg:mt-0"
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/50 to-transparent rounded-full blur-2xl -z-10" />
           <Hero3DProduct />
@@ -120,11 +103,11 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-5 sm:top-10 right-5 sm:right-10 bg-white/80 backdrop-blur-md p-2 sm:p-4 rounded-2xl shadow-lg border border-white/50 hidden lg:flex"
+            className="absolute top-0 sm:top-10 right-0 sm:right-10 bg-white/80 backdrop-blur-md p-2 sm:p-4 rounded-2xl shadow-lg border border-white/50 hidden md:flex"
           >
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="p-1 sm:p-2 bg-yellow-100 rounded-lg">
-                <Star className="w-4 h-4 sm:w-5 sm:h-6 text-yellow-600" fill="currentColor" />
+              <div className="p-1 sm:p-2 bg-blue-100 rounded-lg">
+                <Star className="w-4 h-4 sm:w-5 sm:h-6 text-blue-600" fill="currentColor" />
               </div>
               <div>
                 <p className="text-[8px] sm:text-xs text-gray-500 font-semibold uppercase">Review</p>
@@ -135,6 +118,9 @@ export default function Hero() {
         </motion.div>
 
       </div>
+
+      {/* Render modal outside z-10 context so it overlays the Navbar */}
+      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

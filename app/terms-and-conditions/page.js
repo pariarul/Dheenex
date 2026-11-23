@@ -27,7 +27,7 @@ export default function TermsAndConditions() {
                         transition={{ duration: 0.6 }}
                     >
                         <h1 className="text-4xl md:text-6xl font-bold mb-6">Terms & Conditions</h1>
-                        <p className="text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto">
+                        <p className="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto">
                             Please read these terms carefully before using our services.
                         </p>
                     </motion.div>
@@ -46,17 +46,17 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Scale className="w-6 h-6 text-purple-600" />
+                                    <Scale className="w-6 h-6 text-blue-600" />
                                     1. Acceptance of Terms
                                 </h2>
                                 <p>
-                                    By accessing and using the website and services of <strong>Cobenoinfotech</strong>, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+                                    By accessing and using the website and services of <strong>DHEENEX TECHNOLOGIES</strong>, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
                                 </p>
                             </div>
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Users className="w-6 h-6 text-purple-600" />
+                                    <Users className="w-6 h-6 text-blue-600" />
                                     2. Use of Services
                                 </h2>
                                 <p>
@@ -71,11 +71,11 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Copyright className="w-6 h-6 text-purple-600" />
+                                    <Copyright className="w-6 h-6 text-blue-600" />
                                     3. Intellectual Property
                                 </h2>
                                 <p>
-                                    All content included on this site, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of Cobenoinfotech or its content suppliers and protected by international copyright laws.
+                                    All content included on this site, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of DHEENEX TECHNOLOGIES or its content suppliers and protected by international copyright laws.
                                 </p>
                                 <p className="mt-2">
                                     All specialized project assets and custom code remain protected under the agreed-upon contract terms.
@@ -84,7 +84,7 @@ export default function TermsAndConditions() {
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <CreditCard className="w-6 h-6 text-purple-600" />
+                                    <CreditCard className="w-6 h-6 text-blue-600" />
                                     4. Payment and Refunds
                                 </h2>
                                 <p>
@@ -93,31 +93,42 @@ export default function TermsAndConditions() {
                                 <ul className="list-disc pl-6 space-y-2 mt-4">
                                     <li><strong>Web & Mobile Development Services:</strong> Payments are typically milestone-based as per the project proposal.</li>
                                     <li><strong>Maintenance & Support:</strong> Recurring fees are billed as per the service level agreement.</li>
+                                    <li><strong>DHEENEX ONE SaaS Platform:</strong> Subscriptions (Starter, Business, Enterprise) are billed on a recurring monthly or annual basis. Tenant environments will be provisioned upon payment confirmation and may be suspended if payments lapse.</li>
                                 </ul>
                             </div>
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <TriangleAlert className="w-6 h-6 text-purple-600" />
+                                    <TriangleAlert className="w-6 h-6 text-blue-600" />
                                     5. Limitation of Liability
                                 </h2>
                                 <p>
-                                    In no event shall Cobenoinfotech be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this website or our services.
+                                    In no event shall DHEENEX TECHNOLOGIES be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this website or our services.
                                 </p>
                             </div>
 
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <CircleHelp className="w-6 h-6 text-purple-600" />
-                                    6. Contact Information
+                                    <Users className="w-6 h-6 text-blue-600" />
+                                    6. SaaS Platform Responsibilities (DHEENEX ONE)
+                                </h2>
+                                <p>
+                                    Organizations utilizing the DHEENEX ONE platform are solely responsible for managing their internal Role-Based Access Control (RBAC), maintaining the accuracy of imported employee/intern data, and ensuring that any third-party repository integrations (e.g., GitHub, GitLab) comply with their internal security and data governance policies. We provide strict tenant isolation, but organization administrators govern internal access.
+                                </p>
+                            </div>
+
+                            <div className="mb-12">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                    <CircleHelp className="w-6 h-6 text-blue-600" />
+                                    7. Contact Information
                                 </h2>
                                 <p>
                                     Any questions about these Terms & Conditions should be addressed to us at:
                                 </p>
-                                <div className="mt-4 p-6 bg-purple-50 rounded-xl border border-purple-100">
-                                    <p className="font-bold text-lg text-purple-900">Cobenoinfotech</p>
-                                    <p className="text-purple-800">Email: cobenoinfotech@gmail.com</p>
-                                    <p className="text-purple-800">Address: 1/291, Anna Nagar, Ogalur, Perambalur Dist, Kunnam Tk, PIN 621108</p>
+                                <div className="mt-4 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                                    <p className="font-bold text-lg text-blue-900">DHEENEX TECHNOLOGIES</p>
+                                    <p className="text-blue-800">Email: contact@dheenex.com</p>
+                                    <p className="text-blue-800">Address: 1/291, Anna Nagar, Ogalur, Perambalur Dist, Kunnam Tk, PIN 621108</p>
                                 </div>
                             </div>
 

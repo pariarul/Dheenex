@@ -8,8 +8,38 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-lexend), ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
+  /* DheeneX One brand colours (navy from the DheeneX One logo, #002772) */
+  --color-brand-50: #e8eef9;
+  --color-brand-100: #d3def3;
+  --color-brand-200: #a9bfeb;
+  --color-brand-500: #3b6fd8;
+  --color-brand-600: #002772;
+  --color-brand-700: #1e4ba8;
+  --color-brand-950: #050d24;
+  /* The whole site's "blue" is the DheeneX navy family (logo navy #01286D / #002772).
+     600 = primary (buttons, accents), 700 = hover, 400/300 = accents on dark backgrounds. */
+  --color-blue-50: #e8eef9;
+  --color-blue-100: #d3def3;
+  --color-blue-200: #a9bfeb;
+  --color-blue-300: #8aa8e8;
+  --color-blue-400: #6f95e6;
+  --color-blue-500: #3b6fd8;
+  --color-blue-600: #002772;
+  --color-blue-700: #1e4ba8;
+  --color-blue-800: #011d55;
+  --color-blue-900: #011640;
+  --color-blue-950: #050d24;
+  /* Navy-black for dark mode backgrounds (and the darkest text) */
+  --color-gray-900: #0b1530;
+  --color-gray-950: #050d24;
+  --color-lemon-soft: #fdf3c7;
+  --color-lavender-soft: #e7e4fb;
+  --color-sky-soft: #e4f3fb;
+  --color-mint-soft: #e3f5ec;
+  --color-blush-soft: #fbe3f1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,9 +52,15 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lexend), ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

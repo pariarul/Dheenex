@@ -20,7 +20,7 @@ import {
   PhoneCall,
 } from "lucide-react";
 
-const BLUE = "#0a3d9aff";
+const BLUE = "#002772ff";
 
 const socialLinks = [
   {
@@ -31,12 +31,12 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    url: "https://www.instagram.com/cobenoinfotech/"
+    url: "https://www.instagram.com/DHEENEX TECHNOLOGIES/"
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://www.linkedin.com/company/cobenoinfotech/"
+    url: "https://www.linkedin.com/company/DHEENEX TECHNOLOGIES/"
   }
 ];
 
@@ -84,11 +84,8 @@ export default function Footer() {
             variants={footerVariants}
           >
             <Link href="/" className="inline-block mb-6 group">
-              <img
-                src="/Cobeno_Infotech_logo.png"
-                alt="Cobenoinfotech"
-                className="h-24 sm:h-28 object-contain group-hover:scale-105 transition-transform duration-300"
-              />
+              <img src="/dheenex-technology-logo.png" alt="DheeneX Technologies" className="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300 dark:hidden" />
+              <img src="/dheenex-technology-logo-white.png" alt="DheeneX Technologies" className="hidden h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300 dark:block" />
             </Link>
 
             <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
@@ -151,13 +148,13 @@ export default function Footer() {
             <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-6">Contact Us</h4>
             
             <div className="space-y-6">
-              <a href="mailto:cobenoinfotech@gmail.com" className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-white/5 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
-                  <Mail size={18} />
+              <a href="mailto:contact@dheenex.com" className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
+                  <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-0.5">Email</p>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 font-medium group-hover:text-blue-600 transition-colors">cobenoinfotech@gmail.com</p>
+                  <p className="text-xs font-bold text-gray-900 dark:text-white mb-1">Email Us</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 font-medium group-hover:text-blue-600 transition-colors">contact@dheenex.com</p>
                 </div>
               </a>
 
@@ -237,7 +234,7 @@ export default function Footer() {
           
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
              <p className="text-sm text-gray-500 dark:text-gray-400">
-               © {new Date().getFullYear()} <span className="font-bold text-blue-900 dark:text-white">Cobenoinfotech</span>.
+               © {new Date().getFullYear()} <span className="font-bold text-blue-900 dark:text-white">DHEENEX TECHNOLOGIES</span>.
              </p>
              <div className="flex items-center gap-6 text-[12px] font-medium">
                 <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">Privacy Policy</a>

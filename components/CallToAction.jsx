@@ -41,16 +41,16 @@ function MonitorWithMouse() {
     const ctx = canvas.getContext("2d");
 
     const grd = ctx.createLinearGradient(0, 0, 1024, 600);
-    grd.addColorStop(0, "#4f46e5");
-    grd.addColorStop(1, "#9333ea");
+    grd.addColorStop(0, "#1e4ba8");
+    grd.addColorStop(1, "#3b6fd8");
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, 1024, 600);
 
     ctx.fillStyle = "white";
     ctx.font = "bold 64px Arial";
-    ctx.fillText("COBENO", 60, 120);
+    ctx.fillText("DHEENEX", 60, 120);
     ctx.font = "30px Arial";
-    ctx.fillText("Infotech Solutions", 60, 170);
+    ctx.fillText("Technologies", 60, 170);
 
     return new THREE.CanvasTexture(canvas);
   }, []);
@@ -67,7 +67,7 @@ function MonitorWithMouse() {
         {screenTexture ? (
           <meshBasicMaterial map={screenTexture} />
         ) : (
-          <meshStandardMaterial color="#4f46e5" />
+          <meshStandardMaterial color="#1e4ba8" />
         )}
       </mesh>
 
@@ -103,7 +103,7 @@ export default function CallToAction() {
           <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
             <ambientLight intensity={1.2} />
             <directionalLight position={[10, 10, 5]} intensity={2} />
-            <directionalLight position={[-10, 10, -5]} intensity={1} color="#9333ea" />
+            <directionalLight position={[-10, 10, -5]} intensity={1} color="#3b6fd8" />
 
             <Float speed={2} rotationIntensity={0.4} floatIntensity={0.4}>
               <MonitorWithMouse />
@@ -150,7 +150,7 @@ export default function CallToAction() {
     </a>
 
     <a
-      href="mailto:cobenoinfotech@gmail.com"
+      href="mailto:contact@dheenex.com"
       className="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-lg
                  border border-gray-300 text-gray-900 font-semibold
                  hover:bg-red-500 hover:text-white transition"

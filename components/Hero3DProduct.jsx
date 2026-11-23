@@ -34,16 +34,16 @@ function LaptopModel() {
     const ctx = canvas.getContext("2d")
 
     const g = ctx.createLinearGradient(0, 0, 512, 512)
-    g.addColorStop(0, "#4f46e5")
-    g.addColorStop(1, "#9333ea")
+    g.addColorStop(0, "#1e4ba8")
+    g.addColorStop(1, "#3b6fd8")
     ctx.fillStyle = g
     ctx.fillRect(0, 0, 512, 340)
 
     ctx.fillStyle = "#fff"
     ctx.font = "bold 40px Arial"
-    ctx.fillText("COBENO", 40, 80)
+    ctx.fillText("DHEENEX", 40, 80)
     ctx.font = "20px Arial"
-    ctx.fillText("Infotech Solutions", 40, 115)
+    ctx.fillText("Technologies", 40, 115)
 
     return new THREE.CanvasTexture(canvas)
   }, [])
@@ -108,7 +108,7 @@ function LaptopModel() {
 /* ---------------- Hero Section ---------------- */
 export default function Hero3DProduct() {
   return (
-    <div className="w-full h-[500px]">
+    <div className="w-full h-full">
       <Canvas
         camera={{ position: [0, 1.5, 6], fov: 45 }}
         onCreated={({ camera }) => camera.lookAt(0, 0, 0)}
@@ -119,7 +119,7 @@ export default function Hero3DProduct() {
         <directionalLight
           position={[-8, 6, -5]}
           intensity={1}
-          color="#4f46e5"
+          color="#1e4ba8"
         />
 
         <Float speed={1.3} floatIntensity={0.22} rotationIntensity={0.25}>

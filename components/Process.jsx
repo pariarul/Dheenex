@@ -14,25 +14,25 @@ const steps = [
     title: "UI/UX Design",
     description: "Our designers craft intuitive, pixel-perfect interfaces tailored for your brand.",
     icon: PenTool,
-    color: "bg-indigo-600",
+    color: "bg-blue-600",
   },
   {
     title: "Development",
     description: "We build scalable, high-performance web and mobile applications using modern tech.",
     icon: Code2,
-    color: "bg-purple-600",
+    color: "bg-blue-600",
   },
   {
     title: "Quality Assurance",
     description: "Rigorous testing across all platforms to ensure your product is bug-free and smooth.",
     icon: ShieldCheck,
-    color: "bg-cyan-600",
+    color: "bg-blue-600",
   },
   {
     title: "Launch & Support",
     description: "We handle deployment and provide ongoing maintenance to keep you growing.",
     icon: Rocket,
-    color: "bg-teal-600",
+    color: "bg-blue-600",
   },
 ];
 

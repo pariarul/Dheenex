@@ -52,8 +52,8 @@ export default function WhyChooseUs() {
     >
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-40 h-40 rounded-full bg-blue-200/30 blur-3xl -z-10" />
-      <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-yellow-200/20 blur-2xl -z-10" />
-      <div className="absolute top-10 right-0 w-48 h-48 rounded-full bg-purple-200/20 blur-3xl -z-10" />
+      <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-blue-200/20 blur-2xl -z-10" />
+      <div className="absolute top-10 right-0 w-48 h-48 rounded-full bg-blue-200/20 blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
             </h3>
 
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              Cobenoinfotech helps businesses grow online with high-performance
+              DHEENEX TECHNOLOGIES helps businesses grow online with high-performance
               websites and result-driven digital marketing strategies that
               increase visibility, engagement, and conversions.
             </p>

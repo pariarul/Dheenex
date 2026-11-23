@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe, Layout, Database, ShoppingCart, MessageCircle, Store, ArrowRight, Smartphone, Palette, Cloud, Waypoints, Search } from "lucide-react";
+import { Globe, Layout, Database, ShoppingCart, MessageCircle, Store, ArrowRight, Smartphone, Palette, Cloud, Waypoints, Search, Bot, Rocket, Briefcase, GraduationCap } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -16,36 +16,36 @@ const services = [
     title: "Static Website Development",
     description: "High-performance, SEO-friendly applications.",
     icon: Layout,
-    color: "text-purple-500",
-    bg: "bg-purple-50 dark:bg-purple-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "Dynamic Website Development",
     description: "Node.js, Express, MongoDB solutions.",
     icon: Database,
-    color: "text-green-500",
-    bg: "bg-green-50 dark:bg-green-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "E-commerce Development",
     description: "E-Commerce platforms with secure payment gateways.",
     icon: ShoppingCart,
-    color: "text-yellow-500",
-    bg: "bg-yellow-50 dark:bg-yellow-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "product catalog development",
     description: "Custom product catalogs for your business.",
     icon: MessageCircle,
-    color: "text-pink-500",
-    bg: "bg-pink-50 dark:bg-pink-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "CRM Development",
     description: "Custom CRM solutions for businesses.",
     icon: Store,
-    color: "text-orange-500",
-    bg: "bg-orange-50 dark:bg-orange-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "Mobile App Development",
@@ -58,29 +58,57 @@ const services = [
     title: "UI/UX Strategy & Design",
     description: "User-centric design and intuitive prototyping.",
     icon: Palette,
-    color: "text-cyan-500",
-    bg: "bg-cyan-50 dark:bg-cyan-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "Cloud infrastructure",
     description: "Scalable cloud solutions and DevOps automation.",
     icon: Cloud,
-    color: "text-indigo-500",
-    bg: "bg-indigo-50 dark:bg-indigo-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "API & Microservices",
     description: "Secure, reliable, and scalable backend architectures.",
     icon: Waypoints,
-    color: "text-teal-500",
-    bg: "bg-teal-50 dark:bg-teal-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     title: "SEO & Digital Strategy",
     description: "Boost visibility and drive organic traffic.",
     icon: Search,
-    color: "text-rose-500",
-    bg: "bg-rose-50 dark:bg-rose-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+  },
+  {
+    title: "AI & Automation Solutions",
+    description: "Intelligent automation and AI-driven solutions.",
+    icon: Bot,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+  },
+  {
+    title: "Cloud & Deployment Services",
+    description: "Seamless cloud migration and deployment strategies.",
+    icon: Rocket,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+  },
+  {
+    title: "Business Management Software",
+    description: "Tailored software to streamline your business operations.",
+    icon: Briefcase,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+  },
+  {
+    title: "IT Training & Internship Programs",
+    description: "Hands-on training and internships for aspiring professionals.",
+    icon: GraduationCap,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
   },
 ];
 
