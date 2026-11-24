@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -22,6 +22,8 @@ const PAGES = [
   { href: "/dheenex-one/docs", label: "Docs", icon: BookOpen },
 ];
 
+const noopSubscribe = () => () => {};
+
 /** The "1" orbit mark from the DheeneX One logo (white version in dark mode). */
 function Logo() {
   return (
@@ -39,9 +41,9 @@ export default function DheenexOneNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(null);
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  // True only in the browser (the menu is drawn on <body>, which the server render does not have)
+  const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false);
   const closeRef = useRef(null);
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const onScroll = () => {
