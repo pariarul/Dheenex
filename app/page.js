@@ -12,7 +12,7 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-gray-900 selection:bg-blue-100 selection:text-blue-900 pb-32 lg:pb-0">
+    <main className="site-main min-h-screen bg-white text-gray-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
       <Hero />
       <WhyChooseUs />

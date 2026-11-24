@@ -65,3 +65,34 @@ html {
     --color-gray-900: #0b1530;
     --color-gray-950: #050d24;
 }
+
+/* ---------- Main site: fixed top bar sizes (announcement bar + navbar) ---------- */
+:root {
+  --announce-h: 2.75rem; /* phones: 44px tall, one line */
+  --nav-h: 4rem;
+}
+@media (min-width: 640px) {
+  :root {
+    --announce-h: 2.5rem;
+    --nav-h: 5rem;
+  }
+}
+/* Closed for this session (set by the inline script in app/layout.js before first paint) */
+html[data-announce="off"] {
+  --announce-h: 0px;
+}
+html[data-announce="off"] .announce-bar {
+  display: none;
+}
+/* Anchors on the main site land below the fixed bars */
+.site-main section[id] {
+  scroll-margin-top: calc(var(--announce-h) + var(--nav-h) + 0.5rem);
+}
+
+/* Horizontal swipe rows on phones: hide the scrollbar, keep swiping */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

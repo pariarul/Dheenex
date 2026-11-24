@@ -36,23 +36,23 @@ export default function WhatWeDo() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="text-blue-600 dark:text-blue-400 font-semibold uppercase tracking-wide text-sm mb-2">
             What We Do
           </h2>
 
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h3 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
             End-to-end business support services
           </h3>
 
-          <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-600 dark:text-gray-400">
             We provide complete business support services that reduce workload,
             improve efficiency, and help you achieve long-term success.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -61,19 +61,21 @@ export default function WhatWeDo() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -6 }}
-              className="p-6 rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-100 dark:border-neutral-800 hover:shadow-lg transition-all"
+              className="flex gap-4 sm:block p-4 sm:p-6 rounded-2xl sm:rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-100 dark:border-neutral-800 hover:shadow-lg transition-all"
             >
-              <div className="w-12 h-12 mb-4 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+              <div className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 sm:mb-4 rounded-xl sm:rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
                 <service.icon size={22} />
               </div>
 
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">
-                {service.title}
-              </h4>
+              <div>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-1 sm:mb-2">
+                  {service.title}
+                </h4>
 
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                {service.description}
-              </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

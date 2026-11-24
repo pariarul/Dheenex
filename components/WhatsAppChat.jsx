@@ -3,9 +3,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
+  // The main site has a bottom tab bar on phones; sit above it there
+  const hasTabBar = !usePathname()?.startsWith("/dheenex-one");
 
   const whatsappNumber = "919361430865";
   const message = "Hello! I'm interested in your services. Can we discuss?";
@@ -16,7 +19,7 @@ export default function WhatsAppChat() {
   };
 
   return (
-    <div className="fixed bottom-32 sm:bottom-24 right-6 z-[9999] flex flex-col items-end">
+    <div className={`fixed right-4 sm:right-6 ${hasTabBar ? "bottom-[calc(5.25rem+env(safe-area-inset-bottom))]" : "bottom-[max(1rem,env(safe-area-inset-bottom))]"} lg:bottom-24 z-40 flex flex-col items-end`}>
       
       {/* Chat Window */}
       <AnimatePresence>
@@ -25,7 +28,7 @@ export default function WhatsAppChat() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="mb-4 w-72 sm:w-80 bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 dark:border-white/10"
+            className="mb-4 w-[min(20rem,calc(100vw-2rem))] bg-white dark:bg-neutral-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 dark:border-white/10"
           >
             {/* Header */}
             <div className="bg-[#25D366] p-4 flex items-center justify-between text-white">
@@ -35,16 +38,16 @@ export default function WhatsAppChat() {
                 </div>
                 <div>
                   <p className="font-bold text-sm">DHEENEX TECHNOLOGIES</p>
-                  <p className="text-[10px] opacity-90">Typically replies in minutes</p>
+                  <p className="text-xs opacity-90">Typically replies in minutes</p>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1 rounded-full transition">
+              <button type="button" onClick={() => setIsOpen(false)} aria-label="Close chat" className="hover:bg-white/10 w-10 h-10 inline-flex items-center justify-center rounded-full transition">
                 <X size={20} />
               </button>
             </div>
 
             {/* Body */}
-            <div className="p-6 bg-[#e5ddd5] dark:bg-neutral-800 h-40 overflow-y-auto flex flex-col gap-3">
+            <div className="p-4 sm:p-6 bg-[#e5ddd5] dark:bg-neutral-800 h-32 sm:h-40 overflow-y-auto flex flex-col gap-3">
               <div className="bg-white dark:bg-neutral-900 p-3 rounded-xl rounded-tl-none shadow-sm text-sm text-gray-800 dark:text-gray-200 self-start max-w-[85%]">
                 Hi there! 👋 How can we help you today with your Web or Mobile project?
               </div>
@@ -59,7 +62,7 @@ export default function WhatsAppChat() {
                   <Send size={18} />
                   Start Chat
                 </button>
-                <p className="text-[10px] text-center text-gray-400">Official WhatsApp Chat Support</p>
+                <p className="text-xs text-center text-gray-400">Official WhatsApp Chat Support</p>
             </div>
           </motion.div>
         )}
@@ -69,9 +72,12 @@ export default function WhatsAppChat() {
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         suppressHydrationWarning
-        className="w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-xl shadow-green-500/20 transition-colors relative"
+        aria-label={isOpen ? "Close WhatsApp chat" : "Chat on WhatsApp"}
+        aria-expanded={isOpen}
+        className="w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-xl shadow-green-500/20 transition-colors relative"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -82,8 +88,8 @@ export default function WhatsAppChat() {
             <motion.div key="chat" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}>
               <svg 
                 viewBox="0 0 24 24" 
-                width="32" 
-                height="32" 
+                width="28" 
+                height="28" 
                 fill="currentColor" 
                 xmlns="http://www.w3.org/2000/svg"
               >

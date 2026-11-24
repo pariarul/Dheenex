@@ -1,7 +1,9 @@
 import { Lexend } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
 import WhatsAppChat from "@/components/WhatsAppChat";
+import MotionProvider from "@/components/MotionProvider";
 
 // Same font as the DheeneX One admin app (variable font: every weight 100-900)
 const lexend = Lexend({ variable: "--font-lexend", subsets: ["latin"], display: "swap" });
@@ -94,9 +96,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={lexend.variable}>
       <body className="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300 relative">
-        {children}
-        <BottomNav />
-        <WhatsAppChat />
+        {/* Hide the "New launch" bar before first paint when it was closed in this session (see Navbar) */}
+        <Script id="announce-state" strategy="beforeInteractive">
+          {`try{if(sessionStorage.getItem("dx-announce-off")==="1")document.documentElement.dataset.announce="off"}catch(e){}`}
+        </Script>
+        <MotionProvider>
+          {children}
+          <BottomNav />
+          <WhatsAppChat />
+        </MotionProvider>
       </body>
     </html>
   );

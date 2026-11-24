@@ -6,7 +6,8 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import EnquiryModal from "@/components/EnquiryModal";
-// Disable SSR for Three.js
+import Lazy3D, { LaptopStatic } from "@/components/Lazy3D";
+// Disable SSR for Three.js; Lazy3D loads it only on tablets/computers
 const Hero3DProduct = dynamic(() => import("@/components/Hero3DProduct"), { ssr: false });
 
 const stats = [];
@@ -19,7 +20,7 @@ export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="relative flex flex-col lg:flex-row items-center pt-24 pb-12 lg:pb-24 overflow-hidden bg-white min-h-screen">
+    <section className="relative flex flex-col lg:flex-row items-center pt-[calc(var(--announce-h)+var(--nav-h)+1.5rem)] lg:pt-[calc(var(--announce-h)+var(--nav-h))] pb-10 lg:pb-24 overflow-hidden bg-white lg:min-h-screen">
 
       {/* BACKGROUND DECORATIONS */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -44,7 +45,7 @@ export default function Hero() {
           className="text-center lg:text-left"
         >
           {/* TAG + ICON */}
-          <div className="relative inline-flex items-center gap-4 mb-6 justify-center lg:justify-start">
+          <div className="relative inline-flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6 justify-center lg:justify-start">
             <span
               className="absolute -inset-2 rounded-full blur-md animate-pulse"
               style={{ background: "radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%)" }}
@@ -60,7 +61,7 @@ export default function Hero() {
           </div>
 
           {/* HEADLINE */}
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 leading-[1.2] lg:leading-[1.1]">
+          <h1 className="text-[2rem] sm:text-4xl font-extrabold tracking-tight text-gray-900 leading-[1.15] lg:leading-[1.1]">
             Empowering Businesses Through <br className="hidden lg:block" />
             <span className="relative inline-block">
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-600 to-blue-400">
@@ -70,16 +71,16 @@ export default function Hero() {
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 max-w-xs sm:max-w-md mx-auto lg:mx-0 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-base text-gray-600 max-w-sm sm:max-w-md mx-auto lg:mx-0 leading-relaxed">
             DHEENEX TECHNOLOGIES specializes in modern <span className="font-semibold text-blue-900">web development and mobile app solutions.</span>
             We help companies grow by building innovative digital products across all platforms.
           </p>
 
           {/* BUTTONS */}
-          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="group relative inline-flex items-center bg-blue-800 justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex w-full sm:w-auto items-center bg-blue-800 justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               
             >
               Get a Quote <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -95,10 +96,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center mt-12 lg:mt-0"
+          className="relative w-full h-[220px] sm:h-[320px] md:h-[500px] lg:h-[600px] flex items-center justify-center mt-6 md:mt-12 lg:mt-0"
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/50 to-transparent rounded-full blur-2xl -z-10" />
-          <Hero3DProduct />
+          <Lazy3D scene={Hero3DProduct} fallback={<LaptopStatic />} className="w-full h-full" />
 
           <motion.div
             animate={{ y: [0, -10, 0] }}

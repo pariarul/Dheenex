@@ -3,8 +3,9 @@
 import { CheckCircle, Users, Globe, Cpu, Monitor, FileText } from "lucide-react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import Lazy3D from "@/components/Lazy3D";
 
-// Disable SSR for 3D component
+// Disable SSR for 3D component; only loaded on tablets/computers (see Lazy3D)
 const About3DProduct = dynamic(
   () => import("@/components/About3DProduct"),
   { ssr: false }
@@ -48,20 +49,20 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about"
-      className="py-12 lg:py-20 bg-gray-50 dark:bg-neutral-900 relative overflow-hidden"
+      className="py-12 lg:py-20 bg-gray-50 dark:bg-neutral-900 relative overflow-hidden isolate"
     >
       {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-40 h-40 rounded-full bg-blue-200/30 blur-3xl -z-10" />
-      <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-yellow-200/20 blur-2xl -z-10" />
-      <div className="absolute top-10 right-0 w-48 h-48 rounded-full bg-purple-200/20 blur-3xl -z-10" />
+      <div className="hidden md:block absolute top-0 left-0 w-40 h-40 rounded-full bg-blue-200/30 blur-3xl -z-10" />
+      <div className="hidden md:block absolute bottom-10 left-10 w-32 h-32 rounded-full bg-yellow-200/20 blur-2xl -z-10" />
+      <div className="hidden md:block absolute top-10 right-0 w-48 h-48 rounded-full bg-purple-200/20 blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* LEFT CONTENT: 3D SECTION */}
-          <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center mt-10 lg:mt-0">
+          {/* LEFT CONTENT: 3D SECTION (decorative; not shown on phones) */}
+          <div className="relative w-full hidden md:flex md:h-[550px] lg:h-[600px] items-center justify-center lg:mt-0">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/50 to-transparent rounded-full blur-2xl -z-10" />
-            <About3DProduct />
+            <Lazy3D scene={About3DProduct} className="w-full h-full flex items-center justify-center" />
           </div>
 
           {/* RIGHT CONTENT */}
@@ -70,22 +71,22 @@ export default function WhyChooseUs() {
               Why Choose Us?
             </h2>
 
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
               Driving business growth through digital innovation
             </h3>
 
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-6 md:mb-8">
               DHEENEX TECHNOLOGIES helps businesses grow online with high-performance
               websites and result-driven digital marketing strategies that
               increase visibility, engagement, and conversions.
             </p>
 
             {/* FEATURES GRID */}
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-6">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="flex gap-4 p-2 rounded-lg hover:bg-blue-50 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+                  className="flex gap-4 p-3 sm:p-2 rounded-xl sm:rounded-lg bg-white sm:bg-transparent border border-gray-100 sm:border-0 hover:bg-blue-50 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -103,7 +104,7 @@ export default function WhyChooseUs() {
                     <h4 className="font-bold text-gray-900 dark:text-white mb-1">
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

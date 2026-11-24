@@ -18,6 +18,19 @@ export default function EnquiryModal({ isOpen, onClose }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  // Page behind does not scroll while the form is open; Escape closes it
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = overflow;
+    };
+  }, [isOpen, onClose]);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -48,7 +61,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[1000] flex items-end sm:items-center justify-center sm:p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -57,20 +70,26 @@ export default function EnquiryModal({ isOpen, onClose }) {
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="enquiry-title"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 overflow-y-auto max-h-[90vh]"
+            className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-t-3xl sm:rounded-2xl shadow-2xl p-5 sm:p-6 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:pb-6 overflow-y-auto overscroll-contain max-h-[92dvh] sm:max-h-[90dvh]"
           >
             <button
+              type="button"
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              aria-label="Close"
+              className="absolute top-3 right-3 w-10 h-10 inline-flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="mb-6 text-center">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Get Started</h2>
+            <div className="mb-5 sm:mb-6 text-center px-8">
+              <div className="sm:hidden mx-auto -mt-1 mb-4 h-1 w-10 rounded-full bg-gray-200" aria-hidden="true" />
+              <h2 id="enquiry-title" className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Get Started</h2>
               <p className="text-gray-600 dark:text-gray-400">Fill in your details and we'll get back to you.</p>
             </div>
 
@@ -88,7 +107,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                       key={t}
                       type="button"
                       onClick={() => setType(t)}
-                      className={`flex-1 py-2 text-sm font-medium rounded-lg transition-colors ${
+                      className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-colors ${
                         type === t
                           ? "bg-white dark:bg-gray-700 text-blue-600 shadow-sm"
                           : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
@@ -108,11 +127,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                       placeholder="Your name"
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
                       <input
@@ -121,7 +140,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                         placeholder="Your email"
                       />
                     </div>
@@ -133,7 +152,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                         name="mobile"
                         value={formData.mobile}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                         placeholder="Mobile number"
                       />
                     </div>
@@ -149,7 +168,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                           name="collegeName"
                           value={formData.collegeName}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                          className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                           placeholder="Enter your college name"
                         />
                       </div>
@@ -166,7 +185,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                           name="companyDetail"
                           value={formData.companyDetail}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                          className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                           placeholder="Company name or details"
                         />
                       </div>
@@ -177,7 +196,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                           name="serviceType"
                           value={formData.serviceType}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                          className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                         >
                           <option value="App Development">App Development</option>
                           <option value="Website Development">Website Development</option>
@@ -195,7 +214,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                             name="otherService"
                             value={formData.otherService}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
+                            className="w-full px-4 py-3 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-900 dark:text-white"
                             placeholder="Specify your needs"
                           />
                         </div>
@@ -207,7 +226,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 mt-6 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70"
+                  className="w-full py-3.5 mt-6 text-white font-bold bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 disabled:opacity-70"
                 >
                   {loading ? "Submitting..." : "Submit Enquiry"}
                 </button>

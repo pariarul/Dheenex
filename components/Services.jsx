@@ -1,8 +1,10 @@
 "use client";
 
 import { Globe, Layout, Database, ShoppingCart, MessageCircle, Store, ArrowRight, Smartphone, Palette, Cloud, Waypoints, Search, Bot, Rocket, Briefcase, GraduationCap } from "lucide-react";
-import { useState } from "react";
 import Link from "next/link";
+import Swipe from "@/components/Swipe";
+
+const PER_PAGE = 3; // services per swipe page on phones
 
 const services = [
   {
@@ -113,37 +115,44 @@ const services = [
 ];
 
 export default function Services() {
-  const [showReviews, setShowReviews] = useState(true);
-
   return (
     <section id="services" className="py-12 lg:py-20 bg-gray-50 dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="text-blue-600 dark:text-blue-400 font-semibold tracking-wide uppercase text-sm mb-2">
             Featured Services
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          <h3 className="text-[1.75rem] leading-tight sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
             Comprehensive Web & App Solutions
           </h3>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Phones: swipe pages of 3 compact rows (next page peeks in). Tablets and up: the grid. */}
+        <Swipe
+          pages={Math.ceil(services.length / PER_PAGE)}
+          label="Services"
+          className="-mx-4 px-4 grid grid-flow-col grid-rows-3 auto-cols-[86%] gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-4 pb-2 no-scrollbar md:mx-0 md:px-0 md:pb-0 md:grid-flow-row md:grid-rows-none md:auto-cols-auto md:grid-cols-3 md:gap-8 md:overflow-visible"
+        >
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="group p-8 bg-white dark:bg-black rounded-2xl border border-gray-100 dark:border-white/10 hover:shadow-xl transition-all hover:-translate-y-1"
+              href="#contact"
+              className="group snap-start flex items-center gap-4 p-4 md:block md:p-8 bg-white dark:bg-black rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm md:shadow-none hover:shadow-xl transition-all md:hover:-translate-y-1"
             >
               <div
-                className={`w-14 h-14 rounded-xl ${service.bg} ${service.color} flex items-center justify-center mb-6`}
+                className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl ${service.bg} ${service.color} flex items-center justify-center md:mb-6`}
               >
-                <service.icon size={28} />
+                <service.icon className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
-<Link  href="#contact" className="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"> Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" /> </Link>
-            </div>
+              <div className="min-w-0 flex-1">
+                <h4 className="text-base md:text-xl font-bold text-gray-900 dark:text-white mb-0.5 md:mb-3 first-letter:uppercase">{service.title}</h4>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 md:mb-6">{service.description}</p>
+                <span className="hidden md:inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"> Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" /> </span>
+              </div>
+              <ArrowRight className="md:hidden shrink-0 w-4 h-4 text-gray-400" aria-hidden="true" />
+            </Link>
           ))}
-        </div>
+        </Swipe>
 
       </div>
     </section>
