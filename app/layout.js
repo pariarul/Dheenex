@@ -8,6 +8,12 @@ import MotionProvider from "@/components/MotionProvider";
 // Same font as the DheeneX One admin app (variable font: every weight 100-900)
 const lexend = Lexend({ variable: "--font-lexend", subsets: ["latin"], display: "swap" });
 
+// Light design on every device, also when the phone is in Dark mode (see globals.css)
+export const viewport = {
+  colorScheme: "light",
+  themeColor: "#ffffff",
+};
+
 export const metadata = {
   title: "DHEENEX TECHNOLOGIES | Leading Web & Mobile App Development Agency in India",
   description:

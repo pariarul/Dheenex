@@ -26,11 +26,15 @@
   --color-blush-soft: #fbe3f1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/*
+ * The site is designed light. Phones in Dark mode (e.g. iPhone) used to switch only some parts dark — the white logo
+ * then sat on a white menu bar. So `dark:` classes now apply only inside an element with class "dark" (none today),
+ * and browsers are told to draw forms and scrollbars in light mode.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
 }
 
 body {
