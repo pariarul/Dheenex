@@ -1,12 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
-  
+  // `swcMinify` and `experimental.appDir` were removed: both are always on in this Next.js version
 };
 
 export default nextConfig;
