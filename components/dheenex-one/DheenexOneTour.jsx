@@ -234,9 +234,9 @@ export default function DheenexOneTour() {
               {/* Screens */}
               <div className="min-w-0">
                 {area.phones ? (
-                  <div className="flex flex-wrap items-start justify-center gap-6 sm:gap-10 rounded-3xl bg-white/60 p-6 sm:p-10 dark:bg-gray-900/60">
+                  <div className="flex items-start justify-center gap-4 sm:gap-10 rounded-3xl bg-white/60 p-4 sm:p-10 dark:bg-gray-900/60">
                     {area.phones.map((p) => (
-                      <div key={p.src} className="w-[200px] sm:w-[240px] text-center">
+                      <div key={p.src} className="w-[46%] max-w-[200px] sm:w-[240px] sm:max-w-none text-center">
                         <PhoneFrame {...p} onOpen={() => lightbox.open(p)} />
                         <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{p.caption}</p>
                       </div>
@@ -253,7 +253,7 @@ export default function DheenexOneTour() {
                             type="button"
                             aria-pressed={i === shotIndex}
                             onClick={() => setShotIndex(i)}
-                            className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${
+                            className={`rounded-full px-4 py-2.5 sm:py-1.5 text-xs font-medium transition ${
                               i === shotIndex ? "bg-brand-600 text-white" : "bg-white text-gray-700 hover:text-gray-900 dark:bg-gray-900 dark:text-gray-300"
                             }`}
                           >
@@ -267,7 +267,7 @@ export default function DheenexOneTour() {
               </div>
 
               {/* Explanation */}
-              <div className="grid gap-6 rounded-3xl bg-white p-6 sm:p-8 shadow-sm dark:bg-gray-900 md:grid-cols-2 md:gap-10">
+              <div className="grid gap-6 rounded-3xl bg-white p-5 sm:p-8 shadow-sm dark:bg-gray-900 md:grid-cols-2 md:gap-10">
                 <div>
                 <div className="flex items-center gap-3">
                   <IconBubble icon={area.icon} tone={area.tone} />

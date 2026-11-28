@@ -54,11 +54,9 @@ export default function BottomNav() {
 
   if (pathname?.startsWith("/dheenex-one")) return null;
 
+  // The main-site Footer leaves room at the bottom for this bar and the WhatsApp button
   return (
     <>
-      {/* Space at the end of the page so the bar never covers the footer */}
-      <div className="lg:hidden h-[calc(5rem+env(safe-area-inset-bottom))]" aria-hidden="true" />
-
       <motion.div
         initial={false}
         animate={{ y: isVisible ? 0 : 120 }}

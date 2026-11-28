@@ -131,13 +131,13 @@ export default function Services() {
         <Swipe
           pages={Math.ceil(services.length / PER_PAGE)}
           label="Services"
-          className="-mx-4 px-4 grid grid-flow-col grid-rows-3 auto-cols-[86%] gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-4 pb-2 no-scrollbar md:mx-0 md:px-0 md:pb-0 md:grid-flow-row md:grid-rows-none md:auto-cols-auto md:grid-cols-3 md:gap-8 md:overflow-visible"
+          className="-mx-4 px-4 grid grid-flow-col grid-rows-3 auto-cols-[88%] gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-4 pb-2 no-scrollbar md:mx-0 md:px-0 md:pb-0 md:grid-flow-row md:grid-rows-none md:auto-cols-auto md:grid-cols-3 md:gap-8 md:overflow-visible"
         >
           {services.map((service, index) => (
             <Link
               key={index}
               href="#contact"
-              className="group snap-start flex items-center gap-4 p-4 md:block md:p-8 bg-white dark:bg-black rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm md:shadow-none hover:shadow-xl transition-all md:hover:-translate-y-1"
+              className="group snap-start flex items-center gap-3.5 p-4 md:block md:p-8 bg-white dark:bg-black rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm md:shadow-none hover:shadow-xl transition-all md:hover:-translate-y-1"
             >
               <div
                 className={`shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl ${service.bg} ${service.color} flex items-center justify-center md:mb-6`}
@@ -149,7 +149,6 @@ export default function Services() {
                 <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 md:mb-6">{service.description}</p>
                 <span className="hidden md:inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"> Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" /> </span>
               </div>
-              <ArrowRight className="md:hidden shrink-0 w-4 h-4 text-gray-400" aria-hidden="true" />
             </Link>
           ))}
         </Swipe>

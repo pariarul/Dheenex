@@ -19,12 +19,12 @@ export function DheenexOneFAQ() {
       <div className="mx-auto max-w-3xl space-y-3">
         {FAQ.map((f, i) => (
           <Reveal key={f.q} delay={i * 0.04}>
-            <details className="group rounded-2xl border border-gray-200/80 bg-white px-5 py-4 shadow-sm open:shadow-md dark:border-gray-800 dark:bg-gray-900">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-gray-900 dark:text-white">
+            <details className="group rounded-2xl border border-gray-200/80 bg-white px-5 shadow-sm open:shadow-md dark:border-gray-800 dark:bg-gray-900">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-medium text-gray-900 dark:text-white">
                 {f.q}
                 <ChevronDown className="h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180" aria-hidden="true" />
               </summary>
-              <p className="mt-3 text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">{f.a}</p>
+              <p className="-mt-1 pb-4 text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">{f.a}</p>
             </details>
           </Reveal>
         ))}
@@ -35,13 +35,13 @@ export function DheenexOneFAQ() {
 
 export default function DheenexOneCTA() {
   return (
-    <section className="bg-white px-4 py-20 dark:bg-gray-900 sm:px-6 md:py-28 lg:px-8">
-      <Reveal className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-brand-600 px-6 py-14 text-center text-white shadow-2xl shadow-brand-600/20 sm:px-12 md:py-20">
+    <section className="bg-white px-4 py-14 dark:bg-gray-900 sm:px-6 md:py-28 lg:px-8">
+      <Reveal className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-brand-600 px-5 py-10 text-center text-white shadow-2xl shadow-brand-600/20 sm:px-12 md:py-20">
         <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-2xl" aria-hidden="true" />
         <div className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-brand-200/20 blur-2xl" aria-hidden="true" />
-        <h2 className="relative text-3xl font-semibold tracking-tight md:text-5xl">Bring your whole team into one place</h2>
-        <p className="relative mx-auto mt-5 max-w-2xl text-lg text-brand-100">Try DheeneX One free for 14 days. No card needed. Cancel any time.</p>
-        <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+        <h2 className="relative text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-3xl md:text-5xl">Bring your whole team into one place</h2>
+        <p className="relative mx-auto mt-4 md:mt-5 max-w-2xl text-base sm:text-lg text-brand-100">Try DheeneX One free for 14 days. No card needed. Cancel any time.</p>
+        <div className="relative mt-7 md:mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <a href="#pricing" className={`${btn.primary} bg-white text-gray-900 hover:bg-gray-100 dark:bg-white dark:text-gray-900`}>
             Start 14-day free trial <ArrowRight className="h-5 w-5" aria-hidden="true" />
           </a>

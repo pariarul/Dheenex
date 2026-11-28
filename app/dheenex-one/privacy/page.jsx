@@ -10,16 +10,16 @@ export default function DheenexOnePrivacyPolicy() {
       <DheenexOneNavbar />
       
       {/* Hero Section */}
-      <section className="bg-blue-600 dark:bg-blue-900 text-white py-16 px-4 text-center border-b border-blue-700 dark:border-blue-800">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
+      <section className="bg-blue-600 dark:bg-blue-900 text-white py-12 md:py-16 px-4 text-center border-b border-blue-700 dark:border-blue-800">
+        <h1 className="text-[2rem] leading-tight sm:text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
         <p className="text-blue-100 max-w-2xl mx-auto">
           How DHEENEX ONE collects, uses, and protects your organizational data.
         </p>
       </section>
 
       {/* Content Section */}
-      <section className="py-20 px-4 max-w-4xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 p-8 md:p-12">
+      <section className="py-8 md:py-20 px-4 max-w-4xl mx-auto">
+        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 p-5 sm:p-8 md:p-12">
           
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-10 pb-6 border-b border-gray-100 dark:border-gray-700">
             Effective Date: January 07, 2026

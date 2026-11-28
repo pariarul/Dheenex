@@ -7,7 +7,7 @@ import { X, CheckCircle2, Eye, EyeOff, Loader2 } from "lucide-react";
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 const inputCls =
-  "w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none text-gray-900 dark:text-white placeholder:text-gray-400";
+  "w-full px-4 py-3 sm:py-2.5 text-base bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none text-gray-900 dark:text-white placeholder:text-gray-400";
 const labelCls = "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1";
 
 const emptyForm = { organizationName: "", organizationType: "", adminName: "", email: "", phone: "", password: "", website: "" };
@@ -137,7 +137,7 @@ export default function PricingSignupModal({ choice: current, onClose, formatPri
   return (
     <AnimatePresence>
       {open && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[1000] flex items-end sm:items-center justify-center sm:p-4">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
           <motion.div
             ref={dialogRef}
@@ -147,13 +147,13 @@ export default function PricingSignupModal({ choice: current, onClose, formatPri
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 overflow-y-auto max-h-[90vh]"
+            className="relative w-full max-w-lg bg-white dark:bg-gray-900 rounded-t-3xl sm:rounded-2xl shadow-2xl p-5 sm:p-6 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:pb-6 overflow-y-auto overscroll-contain max-h-[92dvh] sm:max-h-[90dvh]"
           >
-            <button type="button" onClick={onClose} aria-label="Close" className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+            <button type="button" onClick={onClose} aria-label="Close" className="absolute top-3 right-3 inline-flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
               <X className="w-5 h-5" />
             </button>
 
-            <div className="mb-5 pr-8">
+            <div className="mb-5 pr-10">
               <img src="/dheenex-one/dheenex-one-mark.png" alt="" width={40} height={40} className="mb-3 h-10 w-10 dark:hidden" />
               <img src="/dheenex-one/dheenex-one-mark-white.png" alt="" width={40} height={40} className="mb-3 hidden h-10 w-10 dark:block" />
               <h2 id="pricing-signup-title" className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -233,7 +233,7 @@ export default function PricingSignupModal({ choice: current, onClose, formatPri
                       type="button"
                       onClick={() => setShowPassword((v) => !v)}
                       aria-label={showPassword ? "Hide password" : "Show password"}
-                      className="absolute inset-y-0 right-0 px-3 flex items-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                      className="absolute inset-y-0 right-0 w-11 flex items-center justify-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
                     >
                       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                     </button>
@@ -254,7 +254,7 @@ export default function PricingSignupModal({ choice: current, onClose, formatPri
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 disabled:opacity-60 text-white font-bold transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-full bg-brand-600 hover:bg-brand-700 disabled:opacity-60 text-white font-bold transition-all"
                 >
                   {sending && <Loader2 className="w-4 h-4 animate-spin" />}
                   {sending ? "Sending..." : choice.kind === "BUY" ? "Continue" : "Start free trial"}

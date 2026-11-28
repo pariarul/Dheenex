@@ -132,7 +132,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={linkHref(link.href)}
-                      className="group flex items-center gap-2 py-2 md:py-0 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 text-sm transition-colors"
+                      className="group flex items-center gap-2 py-2.5 md:py-0 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 text-sm transition-colors"
                     >
                       <Icon size={16} className="text-blue-600 dark:text-blue-400 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all" />
                       {link.name}
@@ -189,7 +189,7 @@ export default function Footer() {
                           href="https://maps.google.com/?q=1/291,+Anna+Nagar,+Ogalur,+Perambalur,+621108" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 py-1 text-xs font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest hover:gap-3 transition-all"
+                          className="inline-flex items-center gap-2 py-2.5 text-xs font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest hover:gap-3 transition-all"
                         >
                           Find on Maps <ExternalLink size={12} />
                         </a>
@@ -240,7 +240,7 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM FOOTER */}
-      <div className="border-t border-gray-100 dark:border-white/5 py-6 md:py-8 relative z-10 bg-gray-50/50 dark:bg-transparent">
+      <div className="border-t border-gray-100 dark:border-white/5 pt-6 md:pt-8 pb-[calc(8.5rem+env(safe-area-inset-bottom))] lg:pb-8 relative z-10 bg-gray-50/50 dark:bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
           
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8">

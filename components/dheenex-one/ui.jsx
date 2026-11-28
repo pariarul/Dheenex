@@ -9,7 +9,7 @@ import { X, Maximize2 } from "lucide-react";
 export function Section({ id, tone = "white", className = "", children }) {
   const bg = tone === "soft" ? "bg-brand-50 dark:bg-brand-950" : "bg-white dark:bg-gray-900";
   return (
-    <section id={id} className={`${bg} py-20 md:py-28 scroll-mt-24 ${className}`}>
+    <section id={id} className={`${bg} py-14 md:py-28 scroll-mt-20 md:scroll-mt-24 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -19,14 +19,14 @@ export function Section({ id, tone = "white", className = "", children }) {
 export function SectionHeading({ eyebrow, title, intro, align = "center" }) {
   const center = align === "center";
   return (
-    <Reveal className={`${center ? "text-center mx-auto" : ""} max-w-3xl mb-12 md:mb-16`}>
+    <Reveal className={`${center ? "text-center mx-auto" : ""} max-w-3xl mb-8 md:mb-16`}>
       {eyebrow && (
         <p className="inline-flex items-center gap-2 rounded-full bg-brand-100/70 dark:bg-brand-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-200">
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">{title}</h2>
-      {intro && <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{intro}</p>}
+      <h2 className="mt-4 text-[1.75rem] leading-tight sm:text-3xl md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">{title}</h2>
+      {intro && <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{intro}</p>}
     </Reveal>
   );
 }

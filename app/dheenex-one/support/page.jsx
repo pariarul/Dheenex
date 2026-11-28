@@ -9,19 +9,19 @@ export default function SupportPage() {
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <DheenexOneNavbar />
       
-      <section className="py-20 px-4 max-w-7xl mx-auto">
+      <section className="py-12 md:py-20 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Contact Support</h1>
+          <h1 className="text-[2rem] leading-tight sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Contact Support</h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Need help with your DHEENEX ONE workspace? Our team is here to assist you with technical issues, billing, and onboarding.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           
           {/* Contact Info */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">Direct Contact</h3>
               
               <div className="flex items-start mb-6">
@@ -55,11 +55,11 @@ export default function SupportPage() {
               </div>
             </div>
 
-            <div className="bg-blue-600 rounded-3xl p-8 text-white text-center shadow-lg">
+            <div className="bg-blue-600 rounded-3xl p-6 sm:p-8 text-white text-center shadow-lg">
               <MessageSquare size={32} className="mx-auto mb-4 opacity-80" />
               <h4 className="text-lg font-bold mb-2">Live Chat</h4>
               <p className="text-blue-100 text-sm mb-6">Chat with our support engineers directly inside your dashboard.</p>
-              <button className="bg-white text-blue-600 font-bold px-6 py-2 rounded-full text-sm w-full hover:bg-blue-50 transition-colors">
+              <button className="bg-white text-blue-600 font-bold px-6 py-3 rounded-full text-sm w-full hover:bg-blue-50 transition-colors">
                 Go to Dashboard
               </button>
             </div>
@@ -67,7 +67,7 @@ export default function SupportPage() {
 
           {/* Ticket Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 md:p-12 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Submit a Ticket</h2>
               
               <form className="space-y-6">

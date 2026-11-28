@@ -2,6 +2,7 @@
 
 import { FileSpreadsheet, MessageCircle, ListX, Layers, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Section, SectionHeading, Reveal, IconBubble, card } from "@/components/dheenex-one/ui";
+import Swipe from "@/components/Swipe";
 
 const ITEMS = [
   {
@@ -38,9 +39,10 @@ export default function DheenexOneProblems() {
         title="Stop juggling tools. Start running things."
         intro="Most teams lose hours every week to scattered files and chats. DheeneX One fixes the everyday problems."
       />
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Phones: swipe row with the next card peeking in */}
+      <Swipe pages={ITEMS.length} label="Problems we fix" dotsClassName="sm:hidden" className="-mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 pb-2 no-scrollbar sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible lg:grid-cols-4">
         {ITEMS.map((it, i) => (
-          <Reveal key={it.problem} delay={i * 0.06} className={`${card} p-6 flex flex-col`}>
+          <Reveal key={it.problem} delay={i * 0.06} className={`${card} w-[82%] shrink-0 snap-start sm:w-auto p-5 sm:p-6 flex flex-col`}>
             <IconBubble icon={it.icon} tone={it.tone} />
             <p className="mt-5 text-sm font-medium text-gray-500 line-through decoration-gray-300 dark:text-gray-400 dark:decoration-gray-600">{it.problem}</p>
             <ArrowRight className="my-3 h-4 w-4 text-brand-600 dark:text-brand-200" aria-hidden="true" />
@@ -50,7 +52,7 @@ export default function DheenexOneProblems() {
             </p>
           </Reveal>
         ))}
-      </div>
+      </Swipe>
     </Section>
   );
 }

@@ -13,21 +13,21 @@ export default function PrivacyPolicy() {
     };
 
     return (
-        <main className="min-h-screen bg-white text-gray-900 selection:bg-blue-100 selection:text-blue-900">
+        <main className="site-main min-h-screen bg-white text-gray-900 selection:bg-blue-100 selection:text-blue-900">
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-blue-900  text-white overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
+            <section className="relative pt-[calc(var(--announce-h)+var(--nav-h)+2rem)] pb-12 md:pb-20 bg-blue-900 text-white overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:32px_32px] opacity-10"></div>
+                <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
                     <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={fadeInUp}
                         transition={{ duration: 0.6 }}
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">Privacy Policy</h1>
-                        <p className="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto">
+                        <h1 className="text-[2rem] leading-tight sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6">Privacy Policy</h1>
+                        <p className="text-lg md:text-2xl text-blue-200 max-w-3xl mx-auto">
                             We value your trust and are committed to protecting your personal information.
                         </p>
                     </motion.div>
@@ -35,9 +35,9 @@ export default function PrivacyPolicy() {
             </section>
 
             {/* Content Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-6 max-w-5xl">
-                    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+            <section className="py-8 md:py-20 bg-gray-50">
+                <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+                    <div className="bg-white rounded-2xl shadow-xl p-5 sm:p-8 md:p-12 border border-gray-100">
 
                         <div className="prose prose-lg max-w-none text-gray-700">
                             <p className="border-b pb-6 mb-8 text-sm text-gray-500">

@@ -17,14 +17,14 @@ const docContents = {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
         <span className="text-blue-600 font-bold tracking-widest text-xs mb-2 block uppercase">Dheenex One Documentation</span>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Introduction to the Ecosystem</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Introduction to the Ecosystem</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
           Welcome to the official developer documentation for <strong>DHEENEX ONE</strong>. This platform is a unified SaaS ecosystem designed to completely manage clients, projects, employees, interns, learning tracks, and developer activity.
         </p>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-6">
-        <div className="border border-gray-200 dark:border-gray-700 p-8 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all group bg-white dark:bg-gray-800">
+        <div className="border border-gray-200 dark:border-gray-700 p-5 sm:p-8 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all group bg-white dark:bg-gray-800">
           <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Code className="w-8 h-8 text-blue-600 dark:text-blue-400" />
           </div>
@@ -32,7 +32,7 @@ const docContents = {
           <p className="text-gray-600 dark:text-gray-400">Explore the comprehensive REST API endpoints to build custom integrations, automate workforce tasks, and pull organization metrics directly into your own tools.</p>
         </div>
         
-        <div className="border border-gray-200 dark:border-gray-700 p-8 rounded-3xl hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 transition-all group bg-white dark:bg-gray-800">
+        <div className="border border-gray-200 dark:border-gray-700 p-5 sm:p-8 rounded-3xl hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 transition-all group bg-white dark:bg-gray-800">
           <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Terminal className="w-8 h-8 text-purple-600 dark:text-purple-400" />
           </div>
@@ -41,7 +41,7 @@ const docContents = {
         </div>
       </div>
       
-      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-700">
+      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-3xl p-5 sm:p-8 border border-gray-100 dark:border-gray-700">
         <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-4">
           <Database className="text-blue-500" /> Core Technologies
         </h3>
@@ -57,7 +57,7 @@ const docContents = {
   
   "Quick Start": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Quick Start Guide</h1>
+      <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">Quick Start Guide</h1>
       <p className="text-lg text-gray-600 dark:text-gray-300">To interact with the DHEENEX ONE API programmatically, you first need to generate a secure API key from your organization's settings dashboard.</p>
       
       <div className="space-y-4">
@@ -86,7 +86,7 @@ const docContents = {
   
   "Authentication": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Authentication & Security</h1>
+      <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">Authentication & Security</h1>
       <p className="text-lg text-gray-600 dark:text-gray-300">DHEENEX ONE utilizes strict JSON Web Token (JWT) based authentication for all API endpoints to ensure tenant data remains secure.</p>
       
       <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-6 border border-blue-100 dark:border-blue-900/50 flex gap-4">
@@ -117,12 +117,12 @@ const docContents = {
 
   "Multi-Tenancy": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Multi-Tenant Architecture</h1>
+      <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">Multi-Tenant Architecture</h1>
       <p className="text-lg text-gray-600 dark:text-gray-300">
         DHEENEX ONE operates on a strict multi-tenant database architecture. Every request is scoped to a specific <code>tenantId</code>, guaranteeing total data isolation.
       </p>
       
-      <div className="bg-[#0d1117] rounded-2xl p-8 font-mono text-sm text-gray-300 border border-gray-800 shadow-2xl relative overflow-hidden">
+      <div className="bg-[#0d1117] rounded-2xl p-5 sm:p-8 font-mono text-sm text-gray-300 border border-gray-800 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
         <div className="text-green-400 mb-6">// Logical DB Isolation Example</div>
         <div className="space-y-2">
@@ -149,7 +149,7 @@ const docContents = {
 
   "Role-Based Access": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Role-Based Access Control (RBAC)</h1>
+      <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">Role-Based Access Control (RBAC)</h1>
       <p className="text-lg text-gray-600 dark:text-gray-300">
         Instead of rigid hard-coded roles (like "Admin" or "User"), DHEENEX ONE utilizes a dynamic User → Role → Permissions resolution system.
       </p>
@@ -182,12 +182,12 @@ const docContents = {
 
   "Background Jobs": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Background Jobs (BullMQ)</h1>
+      <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">Background Jobs (BullMQ)</h1>
       <p className="text-lg text-gray-600 dark:text-gray-300">
         To maintain a blazing fast API response time, heavy operations are offloaded to Redis-backed background workers using BullMQ.
       </p>
       
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-5 sm:p-8 text-white shadow-xl relative overflow-hidden">
         <Database className="absolute -right-4 -bottom-4 w-32 h-32 text-gray-700 opacity-20" />
         <h3 className="font-bold text-xl mb-6 text-gray-100 relative z-10">Supported Async Queues:</h3>
         <div className="grid sm:grid-cols-2 gap-4 relative z-10">
@@ -218,7 +218,7 @@ const docContents = {
   "Workforce API": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Workforce API</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Workforce API</h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">Manage your organization's employee lifecycle, departments, attendance, and leave management programmatically.</p>
       </div>
 
@@ -250,7 +250,7 @@ const docContents = {
   "Internship API": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Internship API</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Internship API</h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">Designed specifically for colleges and training institutes to manage student batches, internship tracking, and mentor assignments.</p>
       </div>
 
@@ -277,7 +277,7 @@ const docContents = {
   "LMS API": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">LMS API</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">LMS API</h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">Integrate our Learning Management System into your custom frontends. Fetch courses, manage student progression, and trigger MCQ assessments.</p>
       </div>
 
@@ -304,7 +304,7 @@ const docContents = {
   "Projects API": (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Projects API</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Projects API</h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">Manage client locations, project lifecycles, and granular task assignments for your internal teams.</p>
       </div>
 
@@ -332,12 +332,12 @@ const docContents = {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex items-center gap-4 mb-4">
         <GitMerge className="w-12 h-12 text-gray-900 dark:text-white" />
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">GitHub Synchronization</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">GitHub Synchronization</h1>
       </div>
       <p className="text-lg text-gray-600 dark:text-gray-300">Automatically sync and track developer commits, pull requests, and code reviews from connected GitHub repositories directly into the DHEENEX ONE manager dashboard.</p>
       
       <div className="grid md:grid-cols-2 gap-8 mt-8">
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm relative">
+        <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm relative">
           <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/10 rounded-bl-full pointer-events-none"></div>
           <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-4">How it works (Webhook)</h4>
           <ol className="space-y-4 text-gray-600 dark:text-gray-400">
@@ -348,7 +348,7 @@ const docContents = {
           </ol>
         </div>
         
-        <div className="bg-gray-900 p-8 rounded-3xl border border-gray-800 text-white shadow-xl">
+        <div className="bg-gray-900 p-5 sm:p-8 rounded-3xl border border-gray-800 text-white shadow-xl">
           <h4 className="font-bold text-xl mb-4 text-green-400">Security Note</h4>
           <p className="text-gray-400 text-sm leading-relaxed">
             DHEENEX ONE only requests <strong>Read-Only</strong> access to repository metadata (commits, authors, timestamps, branches). We never read your proprietary source code files. Webhook payloads are verified using a cryptographically secure HMAC signature.
@@ -362,7 +362,7 @@ const docContents = {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex items-center gap-4 mb-4">
         <GitMerge className="w-12 h-12 text-orange-600 dark:text-orange-500" />
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">GitLab Synchronization</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">GitLab Synchronization</h1>
       </div>
       <p className="text-lg text-gray-600 dark:text-gray-300">Connect self-hosted or cloud GitLab instances to track commits, merge requests, and issue resolutions inside DHEENEX ONE.</p>
       
@@ -379,14 +379,14 @@ const docContents = {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex items-center gap-4 mb-4">
         <FileCode2 className="w-12 h-12 text-red-500" />
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Code Execution Sandbox</h1>
+        <h1 className="text-[1.75rem] leading-tight sm:text-4xl font-extrabold text-gray-900 dark:text-white">Code Execution Sandbox</h1>
       </div>
       <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
         To facilitate coding assessments and technical interviews, DHEENEX ONE features a secure, ephemeral code evaluation engine. Untrusted student code is <strong>NEVER</strong> executed inside the main NestJS API containers.
       </p>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <div className="bg-red-50 dark:bg-red-900/10 rounded-3xl p-8 border border-red-100 dark:border-red-900/30">
+        <div className="bg-red-50 dark:bg-red-900/10 rounded-3xl p-5 sm:p-8 border border-red-100 dark:border-red-900/30">
           <h4 className="font-bold text-xl text-red-900 dark:text-red-400 mb-4 flex items-center gap-2">
             <ShieldCheck className="w-5 h-5" /> Strict Limitations
           </h4>
@@ -398,7 +398,7 @@ const docContents = {
           </ul>
         </div>
         
-        <div className="bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-xl text-white">
+        <div className="bg-gray-900 rounded-3xl p-5 sm:p-8 border border-gray-800 shadow-xl text-white">
           <h4 className="font-bold text-xl text-green-400 mb-4 flex items-center gap-2">
             <Terminal className="w-5 h-5" /> Supported Runtimes
           </h4>
@@ -432,7 +432,7 @@ export default function DocumentationPage() {
       <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row border-t border-gray-200 dark:border-gray-800">
         
         {/* Sidebar */}
-        <aside className="w-full md:w-64 lg:w-72 border-r border-gray-200 dark:border-gray-800 p-6 hidden md:block overflow-y-auto" style={{ height: "calc(100vh - 100px)" }}>
+        <aside className="w-full md:w-64 lg:w-72 border-r border-gray-200 dark:border-gray-800 p-6 hidden md:block overflow-y-auto md:sticky md:top-16 md:h-[calc(100vh-100px)]">
           <div className="mb-8">
             <input type="text" placeholder="Search docs..." className="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500" />
           </div>
@@ -459,7 +459,7 @@ export default function DocumentationPage() {
         </aside>
 
         {/* Content */}
-        <div className="flex-1 p-6 md:p-12 lg:p-20 overflow-y-auto" style={{ height: "calc(100vh - 100px)" }}>
+        <div className="flex-1 min-w-0 px-4 py-6 sm:p-6 md:p-12 lg:p-20 md:overflow-y-auto md:h-[calc(100vh-100px)]">
           
           {/* Mobile Navigation Dropdown */}
           <div className="md:hidden mb-8">
@@ -468,7 +468,7 @@ export default function DocumentationPage() {
               <select 
                 value={activeDoc}
                 onChange={(e) => setActiveDoc(e.target.value)}
-                className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 pr-10 focus:ring-2 focus:ring-blue-500 appearance-none shadow-sm"
+                className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl px-4 py-3 pr-10 focus:ring-2 focus:ring-blue-500 appearance-none shadow-sm text-base"
               >
                 {sidebarLinks.map((section, idx) => (
                   <optgroup key={idx} label={section.title} className="font-bold">

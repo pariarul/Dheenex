@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import PricingSignupModal from "@/components/dheenex-one/PricingSignupModal";
 import { SectionHeading, Reveal } from "@/components/dheenex-one/ui";
+import Swipe from "@/components/Swipe";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
@@ -102,7 +103,7 @@ function PlanCard({ plan, cycle, popular, onPick, onDetails }) {
   const sold = (cycle === "YEARLY" ? plan.priceYearly : plan.priceMonthly) > 0;
   return (
     <Reveal
-      className={`relative flex flex-col rounded-3xl bg-white p-6 sm:p-8 transition duration-300 hover:-translate-y-1 hover:shadow-2xl dark:bg-gray-900 ${
+      className={`relative flex w-[86%] shrink-0 snap-start flex-col rounded-3xl bg-white p-5 sm:p-8 transition duration-300 md:w-auto md:hover:-translate-y-1 hover:shadow-2xl dark:bg-gray-900 ${
         popular ? "border-2 border-brand-600 shadow-xl shadow-brand-600/10" : "border border-gray-200/80 shadow-sm dark:border-gray-800"
       }`}
     >
@@ -219,9 +220,9 @@ function PlanDetails({ plan, plans, cycle, onClose, onPick }) {
         aria-modal="true"
         aria-labelledby="plan-details-title"
         onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl dark:bg-gray-900 sm:rounded-3xl"
+        className="flex max-h-[92dvh] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl dark:bg-gray-900 sm:rounded-3xl"
       >
-        <div className="flex items-start justify-between gap-4 border-b border-gray-100 bg-brand-50 px-6 py-5 dark:border-gray-800 dark:bg-gray-800 sm:px-8">
+        <div className="flex items-start justify-between gap-3 border-b border-gray-100 bg-brand-50 px-5 py-4 dark:border-gray-800 dark:bg-gray-800 sm:gap-4 sm:px-8 sm:py-5">
           <div className="flex items-start gap-3">
             <img src="/dheenex-one/dheenex-one-mark.png" alt="" width={44} height={44} className="h-11 w-11 shrink-0 dark:hidden" />
             <img src="/dheenex-one/dheenex-one-mark-white.png" alt="" width={44} height={44} className="hidden h-11 w-11 shrink-0 dark:block" />
@@ -236,7 +237,7 @@ function PlanDetails({ plan, plans, cycle, onClose, onPick }) {
           </button>
         </div>
 
-        <div className="overflow-y-auto px-6 py-6 sm:px-8">
+        <div className="overflow-y-auto overscroll-contain px-5 py-5 sm:px-8 sm:py-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-gray-200 p-4 dark:border-gray-800">
               <p className="text-xs font-medium text-gray-500 dark:text-gray-400">Monthly</p>
@@ -301,7 +302,7 @@ function PlanDetails({ plan, plans, cycle, onClose, onPick }) {
           )}
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-gray-100 px-6 py-4 dark:border-gray-800 sm:flex-row sm:justify-end sm:px-8">
+        <div className="flex flex-col-reverse gap-2 border-t border-gray-100 px-5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] dark:border-gray-800 sm:flex-row sm:justify-end sm:gap-3 sm:px-8 sm:py-4">
           <button type="button" disabled={!sold} onClick={() => onPick(plan, "BUY")} className="rounded-full border border-gray-300 px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">
             Buy now
           </button>
@@ -355,7 +356,7 @@ function CompareSection({ plans, cycle, popularId, onPick, onDetails }) {
   const mp = plans.find((p) => p.id === mobilePlan) ?? plans[0];
 
   return (
-    <div className="mt-16">
+    <div className="mt-12 md:mt-16">
       <div className="text-center">
         <button
           type="button"
@@ -546,11 +547,11 @@ export default function DheenexOnePricing() {
   }, [cycle]);
 
   return (
-    <section id="pricing" className="scroll-mt-24 bg-white py-20 dark:bg-gray-900 md:py-28">
+    <section id="pricing" className="scroll-mt-20 md:scroll-mt-24 bg-white py-14 dark:bg-gray-900 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="Pricing" title="Simple plans for every organization" intro="Start with a free trial, no card needed. Upgrade, change or cancel whenever you like." />
 
-        <div className="-mt-6 mb-12 text-center">
+        <div className="-mt-2 md:-mt-6 mb-10 md:mb-12 text-center">
           <div className="inline-flex items-center rounded-full bg-brand-50 p-1 dark:bg-gray-800" role="group" aria-label="Billing cycle">
             {[
               { id: "MONTHLY", label: "Monthly" },
@@ -561,7 +562,7 @@ export default function DheenexOnePricing() {
                 type="button"
                 aria-pressed={cycle === c.id}
                 onClick={() => setCycle(c.id)}
-                className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
+                className={`rounded-full px-5 py-2.5 sm:py-2 text-sm font-semibold transition ${
                   cycle === c.id ? "bg-gray-900 text-white shadow-sm dark:bg-white dark:text-gray-900" : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                 }`}
               >
@@ -588,25 +589,31 @@ export default function DheenexOnePricing() {
           <p className="text-center text-gray-600 dark:text-gray-400">Plans will be listed here soon. Please contact us for pricing.</p>
         ) : (
           <>
-            <div className="grid gap-8 pt-3 md:grid-cols-2 lg:grid-cols-3">
+            {/* Phones: swipe between plans (next plan peeks in). Tablets and up: the grid. */}
+            <Swipe
+              pages={plans.length}
+              start={Math.max(0, plans.findIndex((p) => p.id === popularId))}
+              label="Plans"
+              className="-mx-4 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 px-4 pb-4 pt-4 no-scrollbar md:mx-0 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:px-0 md:pb-0 md:pt-3 lg:grid-cols-3"
+            >
               {plans.map((p) => (
                 <PlanCard key={p.id} plan={p} cycle={cycle} popular={p.id === popularId} onPick={pick} onDetails={setDetails} />
               ))}
-            </div>
+            </Swipe>
             <CompareSection plans={plans} cycle={cycle} popularId={popularId} onPick={pick} onDetails={setDetails} />
           </>
         )}
 
-        <div className="mx-auto mt-20 max-w-3xl">
-          <h3 className="mb-8 text-center text-2xl font-semibold text-gray-900 dark:text-white">Pricing questions</h3>
+        <div className="mx-auto mt-14 md:mt-20 max-w-3xl">
+          <h3 className="mb-6 md:mb-8 text-center text-2xl font-semibold text-gray-900 dark:text-white">Pricing questions</h3>
           <div className="space-y-3">
             {FAQ.map((f) => (
-              <details key={f.q} className="group rounded-2xl border border-gray-200/80 bg-white px-5 py-4 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-gray-900 dark:text-white">
+              <details key={f.q} className="group rounded-2xl border border-gray-200/80 bg-white px-5 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-medium text-gray-900 dark:text-white">
                   {f.q}
                   <ChevronDown className="h-5 w-5 shrink-0 text-gray-500 transition-transform group-open:rotate-180" aria-hidden="true" />
                 </summary>
-                <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{f.a}</p>
+                <p className="-mt-1 pb-4 text-sm text-gray-600 dark:text-gray-400">{f.a}</p>
               </details>
             ))}
           </div>
